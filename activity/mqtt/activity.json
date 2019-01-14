@@ -1,11 +1,11 @@
 {
-  "name": "mqtt",
+  "name": "mqtt_ssl",
   "type": "flogo:activity",
-  "ref": "github.com/jvanderl/flogo-components/activity/mqtt",
+  "ref": "github.com/mbestazza/flogo-components/activity/mqtt",
   "version": "0.0.1",
-  "title": "Send MQTT Message",
-  "description": "Pubishes message on MQTT topic",
-  "author": "Jan van der Lugt <jvanderl@tibco.com>",
+  "title": "Send MQTT Message with SSL",
+  "description": "Pubishes message on MQTT (SSL) topic",
+  "author": "Massimo Bestazza <massimo.bestazza@tibco.com>",
   "input":[
    {
       "name": "broker",
