@@ -1,4 +1,4 @@
-package mqtt
+package mqtt_ssl
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 )
 
 // log is the default package logger
-var log = logger.GetLogger("activity-jvanderl-mqtt")
+var log = logger.GetLogger("activity-mbestazza-mqtt_ssl")
 
 const (
 	broker   = "broker"
