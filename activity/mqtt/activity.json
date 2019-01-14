@@ -1,5 +1,5 @@
 {
-  "name": "mqtt_ssl",
+  "name": "mqtt",
   "type": "flogo:activity",
   "ref": "github.com/mbestazza/flogo-components/activity/mqtt",
   "version": "0.0.1",
