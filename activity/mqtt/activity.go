@@ -1,4 +1,4 @@
-package mqtt_ssl
+package mqtt
 
 import (
 	"fmt"
