@@ -8,7 +8,7 @@ import (
 )
 
 // log is the default package logger
-var log = logger.GetLogger("activity-mbestazza-mqtt_ssl")
+var log = logger.GetLogger("activity-mbestazza-mqtt")
 
 const (
 	broker   = "broker"
