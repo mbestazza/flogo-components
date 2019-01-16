@@ -8,6 +8,11 @@ This trigger provides your flogo application the ability to start a flow via MQT
 flogo add trigger github.com/mbestazza/flogo-contrib/trigger/mqtt
 ```
 
+Link for flogo web:
+```
+https://github.com/mbestazza/flogo-components/trigger/mqtt
+```
+
 ## Schema
 Settings, Outputs and Endpoint:
 
