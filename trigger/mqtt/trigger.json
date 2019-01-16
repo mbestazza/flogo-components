@@ -1,22 +1,20 @@
 {
-  "name": "flogo-mqtt",
+  "name": "tibco-mqtt-aws",
   "type": "flogo:trigger",
-  "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/mqtt",
-  "version": "0.0.1",
-  "title": "Receive MQTT Message",
-  "author": "Michael Register <mregiste@tibco.com>",
-  "description": "Simple MQTT Trigger",
-  "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/trigger/mqtt",
+  "ref": "github.com/anshulsharmas/flogo-contrib/trigger/mqtt",
+  "version": "0.0.3",
+  "title": "Receive MQTT Message with SSL",
+  "author": "Anshul Sharma <ansharma@tibco.com>",
+  "description": "Simple MQTT Trigger with TLS suppport",
+  "homepage": "https://github.com/mbestazza/flogo-contrib/edit/master/trigger/mqtt",
   "settings":[
     {
       "name": "broker",
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     {
       "name": "id",
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     {
       "name": "user",
@@ -31,24 +29,22 @@
       "type": "string"
     },
     {
+      "name": "topic",
+      "type": "string"
+    },
+    {
       "name": "qos",
-      "type": "double"
+      "type": "number"
     },
     {
       "name": "cleansess",
       "type": "boolean"
     }
   ],
-  "output": [
+  "outputs": [
     {
       "name": "message",
       "type": "string"
-    }
-  ],
-  "reply": [
-    {
-      "name": "data",
-      "type": "object"
     }
   ],
   "handler": {
