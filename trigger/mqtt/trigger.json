@@ -2,11 +2,11 @@
   "name": "tibco-mqtt-aws",
   "type": "flogo:trigger",
   "ref": "github.com/mbestazza/flogo-components/trigger/mqtt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "title": "Receive MQTT Message with SSL",
   "author": "Massimo Bestazza <massimo.bestazza@tibco.com>",
   "description": "Simple MQTT Trigger with TLS suppport",
-  "homepage": "https://github.com/mbestazza/flogo-components/edit/master/trigger/mqtt",
+  "homepage": "https://github.com/mbestazza/flogo-components/tree/master/trigger/mqtt",
   "settings":[
     {
       "name": "broker",
@@ -29,10 +29,6 @@
       "type": "string"
     },
     {
-      "name": "topic",
-      "type": "string"
-    },
-    {
       "name": "qos",
       "type": "number"
     },
@@ -41,9 +37,13 @@
       "type": "boolean"
     }
   ],
-  "outputs": [
+  "output": [
     {
       "name": "message",
+      "type": "string"
+    },
+    {
+      "name": "actualtopic",
       "type": "string"
     }
   ],
