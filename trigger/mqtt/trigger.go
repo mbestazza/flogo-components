@@ -20,8 +20,6 @@ import (
 	"github.com/eclipse/paho.mqtt.golang"
 	"time"
 	
-	"github.com/TIBCOSoftware/flogo-lib/core/activity"
-	"fmt"
 )
 
 // log is the default package logger
@@ -68,8 +66,8 @@ func (t *MqttTrigger) Start() error {
 
 	ivID, ok := idInput.(string)
 	if !ok {
-		log.Error("Error lient id not set", err.Error())
-		return !ok
+		log.Error("Error client id not set", err.Error())
+		ivID = "flogo"
 	}
 	
 	userInput := t.config.GetSetting("user")
