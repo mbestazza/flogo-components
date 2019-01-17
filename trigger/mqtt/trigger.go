@@ -66,7 +66,7 @@ func (t *MqttTrigger) Start() error {
 	ivID, ok := idInput.(string)
 	if !ok {
 		log.Error("Error lient id not set", err.Error())
-		return err
+		return !ok
 	}
 	
 	userInput := t.config.GetSetting("user")
