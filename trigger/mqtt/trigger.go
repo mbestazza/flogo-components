@@ -19,6 +19,9 @@ import (
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/eclipse/paho.mqtt.golang"
 	"time"
+	
+	"github.com/TIBCOSoftware/flogo-lib/core/activity"
+	"fmt"
 )
 
 // log is the default package logger
