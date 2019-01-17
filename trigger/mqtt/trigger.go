@@ -64,34 +64,30 @@ func (t *MqttTrigger) Start() error {
 
 	idInput := t.config.GetSetting("id")
 
-	ivID, ok := idInput.(string)
-	if !ok {
-		log.Error("Error client id not set", err.Error())
-		ivID = "flogo"
+	if idInput == nil {
+		log.Error("Error client id not set")
+		idInput = "flogo"
 	}
 	
 	userInput := t.config.GetSetting("user")
-
-	ivUser, ok := userInput.(string)
-	if !ok {
-		//User not set, use default
-		ivUser = ""
+	if userInput == nil {
+		log.Error("Error userInput not set")
+		userInput = ""
 	}
+	
 
 	passwordInput := t.config.GetSetting("password")
-
-	ivPassword, ok := passwordInput.(string)
-	if !ok {
-		//Password not set, use default
-		ivPassword = ""
+	if passwordInput == nil {
+		log.Error("Error passwordInput  not set", err.Error())
+		passwordInput = ""
 	}
 	
 	
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(t.config.GetSetting("broker"))
-	opts.SetClientID(ivID)
-	opts.SetUsername(ivUser)
-	opts.SetPassword(ivPassword)
+	opts.SetClientID(idInput)
+	opts.SetUsername(userInput)
+	opts.SetPassword(passwordInput)
 
 
 
