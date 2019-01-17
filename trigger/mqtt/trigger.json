@@ -6,7 +6,7 @@
   "title": "Receive MQTT Message with SSL",
   "author": "Massimo Bestazza <massimo.bestazza@tibco.com>",
   "description": "Simple MQTT Trigger with TLS suppport",
-  "homepage": "https://github.com/mbestazza/flogo-contrib/edit/master/trigger/mqtt",
+  "homepage": "https://github.com/mbestazza/flogo-components/edit/master/trigger/mqtt",
   "settings":[
     {
       "name": "broker",
