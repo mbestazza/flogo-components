@@ -90,7 +90,7 @@ func (t *MqttTrigger) Start() error {
 	opts.AddBroker(t.config.GetSetting("broker"))
 	opts.SetClientID(ivID)
 	opts.SetUsername(ivUser)
-	opts.SetPassword(passwordInput)
+	opts.SetPassword(ivPassword)
 
 
 
