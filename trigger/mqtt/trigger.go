@@ -61,11 +61,36 @@ func (t *MqttTrigger) Init(runner action.Runner) {
 // Start implements ext.Trigger.Start
 func (t *MqttTrigger) Start() error {
 
+	idInput := t.config.GetSetting("id")
+
+	ivID, ok := idInput.(string)
+	if !ok {
+		log.Error("Error lient id not set", err.Error())
+		return err
+	}
+	
+	userInput := t.config.GetSetting("user")
+
+	ivUser, ok := userInput.(string)
+	if !ok {
+		//User not set, use default
+		ivUser = ""
+	}
+
+	passwordInput := t.config.GetSetting("password")
+
+	ivPassword, ok := passwordInput.(string)
+	if !ok {
+		//Password not set, use default
+		ivPassword = ""
+	}
+	
+	
 	opts := mqtt.NewClientOptions()
 	opts.AddBroker(t.config.GetSetting("broker"))
-	opts.SetClientID(t.config.GetSetting("id"))
-	opts.SetUsername(t.config.GetSetting("user"))
-	opts.SetPassword(t.config.GetSetting("password"))
+	opts.SetClientID(ivID)
+	opts.SetUsername(ivUser)
+	opts.SetPassword(passwordInput)
 
 
 
