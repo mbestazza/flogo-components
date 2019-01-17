@@ -122,6 +122,7 @@ func (t *MqttTrigger) Start() error {
 	t.client = client
 	log.Infof("Connecting to broker [%s]", t.config.GetSetting("broker"))
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
+		log.Error("Error connection: ", token.Error())
 		panic(token.Error())
 	}
 	log.Info("Connected to broker")
