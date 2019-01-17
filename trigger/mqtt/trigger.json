@@ -1,7 +1,7 @@
 {
   "name": "tibco-mqtt-aws",
   "type": "flogo:trigger",
-  "ref": "github.com/mbestazza/flogo-contrib/trigger/mqtt",
+  "ref": "github.com/mbestazza/flogo-components/trigger/mqtt",
   "version": "0.0.3",
   "title": "Receive MQTT Message with SSL",
   "author": "Massimo Bestazza <massimo.bestazza@tibco.com>",
