@@ -89,8 +89,6 @@ func (t *MqttTrigger) Start() error {
 	opts.SetUsername(userInput)
 	opts.SetPassword(passwordInput)
 
-log.Error("after opts.SetPassword")
-
 
 
 	b, err := strconv.ParseBool(t.config.GetSetting("cleansess"))
@@ -116,13 +114,12 @@ log.Error("after opts.SetPassword")
 		}
 	})
 	
-log.Error("after opts.SetDefaultPublishHandler")
 
 	//set tls config
 	tlsConfig := NewTLSConfig("")
 	opts.SetTLSConfig(tlsConfig)
 	
-log.Error("Before Client")
+	log.Infof("Before Client")
 	
 	client := mqtt.NewClient(opts)
 	t.client = client
@@ -131,7 +128,8 @@ log.Error("Before Client")
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
 		panic(token.Error())
 	}
-
+	log.Info("Connected to broker")
+	
 	i, err := strconv.Atoi(t.config.GetSetting("qos"))
 	if err != nil {
 		log.Error("Error converting \"qos\" to an integer ", err.Error())
