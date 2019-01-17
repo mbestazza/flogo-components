@@ -8,7 +8,7 @@ import (
 	// "encoding/json"
 	"io/ioutil"
 	"strconv"
-
+	"strings"
 
 	//"github.com/TIBCOSoftware/flogo-contrib/action/flow/support"
 
