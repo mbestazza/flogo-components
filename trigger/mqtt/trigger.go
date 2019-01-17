@@ -78,7 +78,7 @@ func (t *MqttTrigger) Start() error {
 
 	passwordInput := t.config.GetSetting("password")
 	if passwordInput == "" {
-		log.Error("Error passwordInput  not set", err.Error())
+		log.Error("Error passwordInput  not set")
 		passwordInput = ""
 	}
 	
