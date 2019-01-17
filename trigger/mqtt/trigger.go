@@ -28,7 +28,7 @@ var log = logger.GetLogger("trigger-tibco-mqtt")
 
 // todo: switch to use endpoint registration
 
-// Mqtt2Trigger is simple MQTT trigger
+// MqttTrigger is simple MQTT trigger
 type MqttTrigger struct {
 	metadata        *trigger.Metadata
 	runner          action.Runner
@@ -167,7 +167,7 @@ func (t *MqttTrigger) Stop() error {
 }
 
 // RunAction starts a new Process Instance
-func (t *Mqtt2Trigger) RunAction(actionId string, payload string, topic string) {
+func (t *MqttTrigger) RunAction(actionId string, payload string, topic string) {
 
 		log.Info("Starting new Process Instance")
 		log.Infof("Action Id: %s", actionId)
@@ -208,7 +208,7 @@ func (t *Mqtt2Trigger) RunAction(actionId string, payload string, topic string) 
 		} */
 }
 
-func (t *Mqtt2Trigger) publishMessage(topic string, message string) {
+func (t *MqttTrigger) publishMessage(topic string, message string) {
 
 	log.Debug("ReplyTo topic: ", topic)
 	log.Debug("Publishing message: ", message)
@@ -222,7 +222,7 @@ func (t *Mqtt2Trigger) publishMessage(topic string, message string) {
 	token.Wait()
 }
 
-func (t *Mqtt2Trigger) constructStartRequest(message string, topic string) *StartRequest {
+func (t *MqttTrigger) constructStartRequest(message string, topic string) *StartRequest {
 
 	log.Debug("Received contstruct start request")
 
