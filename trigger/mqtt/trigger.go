@@ -89,7 +89,7 @@ func (t *MqttTrigger) Start() error {
 	opts.SetUsername(userInput)
 	opts.SetPassword(passwordInput)
 
-
+log.Error("after opts.SetPassword")
 
 
 
@@ -115,12 +115,15 @@ func (t *MqttTrigger) Start() error {
 			log.Errorf("Topic %s not found", t.topicToActionURI[topic])
 		}
 	})
-
+	
+log.Error("after opts.SetDefaultPublishHandler")
 
 	//set tls config
 	tlsConfig := NewTLSConfig("")
 	opts.SetTLSConfig(tlsConfig)
-
+	
+log.Error("after opts.SetTLSConfig")
+	
 	client := mqtt.NewClient(opts)
 	t.client = client
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
@@ -134,7 +137,8 @@ func (t *MqttTrigger) Start() error {
 	}
 
 	t.topicToActionURI = make(map[string]string)
-
+log.Error("after t.topicToActionURI")
+	
 	for _, handlerCfg := range t.config.Handlers {
 
 		topic := handlerCfg.GetSetting("topic")
