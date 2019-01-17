@@ -122,10 +122,12 @@ log.Error("after opts.SetDefaultPublishHandler")
 	tlsConfig := NewTLSConfig("")
 	opts.SetTLSConfig(tlsConfig)
 	
-log.Error("after opts.SetTLSConfig")
+log.Error("Before Client")
 	
 	client := mqtt.NewClient(opts)
 	t.client = client
+	log.Infof("Connecting to broker [%s]", t.config.GetSetting("broker"))
+	
 	if token := client.Connect(); token.Wait() && token.Error() != nil {
 		panic(token.Error())
 	}
