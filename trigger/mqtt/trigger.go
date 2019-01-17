@@ -64,20 +64,20 @@ func (t *MqttTrigger) Start() error {
 
 	idInput := t.config.GetSetting("id")
 
-	if idInput := "" {
+	if idInput == "" {
 		log.Error("Error client id not set")
 		idInput = "flogo"
 	}
 	
 	userInput := t.config.GetSetting("user")
-	if userInput := "" {
+	if userInput == "" {
 		log.Error("Error userInput not set")
 		userInput = ""
 	}
 	
 
 	passwordInput := t.config.GetSetting("password")
-	if passwordInput := "" {
+	if passwordInput == "" {
 		log.Error("Error passwordInput  not set", err.Error())
 		passwordInput = ""
 	}
