@@ -5,12 +5,12 @@ import (
 
 	"crypto/tls"
 	"crypto/x509"
-	"encoding/json"
+	// "encoding/json"
 	"io/ioutil"
 	"strconv"
 
 
-	"github.com/TIBCOSoftware/flogo-contrib/action/flow/support"
+	//"github.com/TIBCOSoftware/flogo-contrib/action/flow/support"
 
 
 	"github.com/TIBCOSoftware/flogo-lib/core/action"
@@ -18,7 +18,7 @@ import (
 
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/eclipse/paho.mqtt.golang"
-	"time"
+	//"time"
 	
 )
 
@@ -152,7 +152,7 @@ func (t *MqttTrigger) Start() error {
 }
 
 // Stop implements ext.Trigger.Stop
-func (t *Mqtt2Trigger) Stop() error {
+func (t *MqttTrigger) Stop() error {
 	//unsubscribe from topics
 	for _, handlerCfg := range t.config.Handlers {
 		log.Infof("Unsubcribing from topic: %s ", handlerCfg.GetSetting("topic"))
@@ -169,10 +169,10 @@ func (t *Mqtt2Trigger) Stop() error {
 // RunAction starts a new Process Instance
 func (t *Mqtt2Trigger) RunAction(actionId string, payload string, topic string) {
 
-	/*	log.Info("Starting new Process Instance")
+		log.Info("Starting new Process Instance")
 		log.Infof("Action Id: %s", actionId)
 		log.Infof("Payload: %s", payload)
-		log.Infof("Actual Topic: %s", topic) */
+		log.Infof("Actual Topic: %s", topic) 
 
 	req := t.constructStartRequest(payload, topic)
 	//err := json.NewDecoder(strings.NewReader(payload)).Decode(req)
